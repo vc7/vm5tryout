@@ -16,10 +16,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup table view
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "normal_cell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        // Setup cell provider
         self.adCellProvider = VAAdCellProvider(placement: "test", adType: kVAAdTypeVideoCard, tableView: self.tableView, forAttributes: self.adAttributes())
         self.adCellProvider?.testMode = true
         self.adCellProvider?.apiKey = "not-applied"
